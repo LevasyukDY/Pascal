@@ -1,0 +1,36 @@
+﻿procedure InputImass(var a: mass; n: integer);
+var 
+  j: integer;
+begin
+    for j := 1 to n do
+        readln(a[j]);
+      writeln;
+end;
+
+procedure Output(var a: mass; n: integer);
+var 
+  j: integer;
+begin
+    for j := 1 to n do
+        write(a[j]:4);
+      writeln;
+end;
+
+procedure FileOutput(var a: mass; n:integer; t: text);
+var 
+  j: byte;
+begin
+    for j := 1 to n do
+        write(t, a[j]:4);
+      writeln(t);
+end;
+
+function maximum(a: mass; n: integer): real;
+var 
+  i,Mmax: integer;
+begin
+     Mmax := 1;
+     for i:=2 to n do
+      if  a[i] > a[Mmax] then Mmax := i;
+     maximum := a[Mmax];
+end;

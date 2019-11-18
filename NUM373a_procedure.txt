@@ -1,0 +1,26 @@
+﻿procedure vvod;
+var
+  i, j: byte;
+begin
+  for i := 1 to n do
+    for j := 1 to 9 do
+    begin
+      write('a[', i, ',', j, ']='); read(a[i, j]);
+    end;
+end;
+
+procedure vivod;
+var
+  i, j: byte;
+begin
+  for i := 1 to n do
+  begin
+    writeln; 
+    writeln(t);
+    for j := 1 to 9 do
+    begin
+      write(a[i, j], ' ');
+      write(t, a[i, j], ' ');
+    end;
+  end;
+end;

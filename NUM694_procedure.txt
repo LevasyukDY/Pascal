@@ -1,0 +1,62 @@
+﻿procedure InputImass(var a: mass; n: integer);
+var 
+  i: byte;
+begin
+    for i := 1 to n do
+    begin
+        read(a[i]);
+    end;
+      writeln;
+end;
+
+procedure Output(var a: mass; n: integer);
+var 
+  i, j: byte;
+begin
+    for i := 1 to n do
+    begin
+      for j := 1 to n do
+        write(a[i, j]:4);
+      writeln;
+    end;
+end;
+
+procedure FileOutput(var a: mass; n:integer; t: text);
+var 
+  i, j: byte;
+begin
+    for i := 1 to n do
+    begin
+      for j := 1 to n do
+        write(t, a[i, j]:4);
+      writeln(t);
+    end;
+end;
+
+procedure MainDia(var a: mass; n: integer);
+var
+  i, j: byte;
+begin
+    for i := 1 to n do
+      for j := 1 to n do
+        if (i = j) then a[i, j] := 1
+        else a[i, j] := 0;
+end;
+
+procedure MainDiaN(var a: mass; n: integer);
+var
+  i, j, k: byte;
+begin
+    for i := 1 to n do
+      for j := 1 to n do
+        if (i = j) then a[i, j] := n
+        else 
+        begin
+          if (i < j) then a[i, j] := 0
+          else
+          begin
+            for k := 1 to n do
+              if (i = j + k) then a[i, j] := n - k
+          end;
+        end;
+end;

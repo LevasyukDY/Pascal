@@ -1,0 +1,16 @@
+ read(f, a);
+    write(h, a);
+  end;
+  
+  for i := 1 to filesize(g) do
+  begin
+    read(g, a);
+    write(h, a);
+  end;
+  
+  close(f);
+  close(g);
+  close(h);
+  
+  writeln('запись в файл прошла успешно...');
+end.

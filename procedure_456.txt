@@ -1,0 +1,7 @@
+procedure Count(u1, u2, n: integer; t: text);
+begin
+  write(u1 + u2, ' ');
+  write(t, u1 + u2, ' ');
+  if n <> 2 then 
+    Count(u2, u1 + u2, n - 1, t);
+end;

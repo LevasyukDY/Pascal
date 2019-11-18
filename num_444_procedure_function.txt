@@ -1,0 +1,55 @@
+﻿procedure InputVer(var x, y: mass; n: integer);
+var 
+  i: integer;
+begin
+    for i := 1 to n do
+    begin
+      write('Координаты ', i, ' вершины: '); 
+      readln(x[i], y[i]);
+    end;
+end;
+
+procedure OutputVer(var x, y: mass; n: integer);
+var 
+  i: integer;
+begin
+    for i := 1 to n do
+    begin
+      write('x[', i,'] = ', x[i], '  ');
+      write('y[', i,'] = ', y[i]);
+      writeln;
+    end;
+end;
+
+procedure FileOutputVer(var x, y: mass; n: integer; t: text);
+var 
+  i: integer;
+begin
+    for i := 1 to n do
+    begin
+      write(t, 'x[', i,'] = ', x[i], '  ');
+      write(t, 'y[', i,'] = ', y[i]);
+      writeln(t);
+    end;
+end;
+
+function PolygonArea(x, y: mass; n: integer): real;
+var 
+  i: integer;
+  sum1, sum2: real;
+begin
+    for i := 1 to n - 1 do
+    begin
+      sum1 := x[i] * y[i + 1] + sum1;
+    end;
+    sum1 := sum1 + x[n] * y[1];
+    
+    for i := 1 to n - 1 do
+    begin
+      sum2 := x[i + 1] * y[i] + sum2;
+    end;
+    sum2 := sum2 + x[1] * y[n];
+    
+    PolygonArea := (sum1 - sum2) / 2;
+end;
+
